@@ -13,6 +13,17 @@ public class Player : MonoBehaviour
 {
     public float speed = 5.0f;
 
+    void Start()
+    {
+        // Ensure the player has a Rigidbody2D component
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            rb = gameObject.AddComponent<Rigidbody2D>();
+        }
+        rb.gravityScale = 0; // Ensure the player is not affected by gravity
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -54,5 +65,24 @@ public class Player : MonoBehaviour
 
         // Apply movement
         transform.Translate(Vector3.right * move * speed * Time.deltaTime);
+    }
+
+    // Handle collision with obstacles
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Obstacle"))
+        {
+            GameOver();
+        }
+    }
+
+    void GameOver()
+    {
+        // Implement your game over logic here
+        Debug.Log("Game Over!");
+        // For example, you can stop the game
+        Time.timeScale = 0;
+        // Or you can load a game over scene
+        // SceneManager.LoadScene("GameOver");
     }
 }

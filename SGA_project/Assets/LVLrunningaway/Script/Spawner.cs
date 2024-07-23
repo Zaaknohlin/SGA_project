@@ -42,6 +42,6 @@ public class ObstacleSpawner : MonoBehaviour
     // Function to calculate Poisson random time
     float GetPoissonRandom(float lambda)
     {
-        return -Mathf.Log(1.0f - Random.value) / lambda;
+        return lambda;
     }
 }
