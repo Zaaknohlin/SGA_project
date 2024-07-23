@@ -11,9 +11,9 @@ using UnityEngine;
  * the speed increase as the time pass (gravity effect).
  * Additionally, destroy the obstacle when it's outside the camera view.
  */
-public class MoveSprite : MonoBehaviour
+public class MoveRoad : MonoBehaviour
 {
-    public float growthRate = 0.1f; // Amount by which the scale increase
+    public float growthRate = 1.0f; // Amount by which the scale increase
     public float initialSpeed = 1.0f;
     public float gravityAcceleration = 9.8f;
     private Vector3 direction;
@@ -41,8 +41,6 @@ public class MoveSprite : MonoBehaviour
 
         // scale the sprite making it appear closer
         Grow();
-
-
         // Check if the sprite is outside the camera view and destroy it if so
         if (!IsInView())
         {
