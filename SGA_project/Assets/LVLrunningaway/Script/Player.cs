@@ -12,6 +12,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed = 5.0f;
+    public float leftBoundary = -5.0f;
+    public float rightBoundary = 5.0f;
 
     void Start()
     {
@@ -63,8 +65,14 @@ public class Player : MonoBehaviour
             }
         }
 
-        // Apply movement
-        transform.Translate(Vector3.right * move * speed * Time.deltaTime);
+        // Calculate new position
+        Vector3 newPosition = transform.position + Vector3.right * move * speed * Time.deltaTime;
+
+        // Clamp the new position within the boundaries
+        newPosition.x = Mathf.Clamp(newPosition.x, leftBoundary, rightBoundary);
+
+        // Apply the clamped position
+        transform.position = newPosition;
     }
 
     // Handle collision with obstacles

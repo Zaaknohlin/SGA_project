@@ -20,9 +20,19 @@ public class MoveSprite : MonoBehaviour
     private float speed;
     private Camera mainCamera;
 
+    // List of possible directions
+    private List<Vector3> directions = new List<Vector3>
+    {
+        Vector3.down,
+        new Vector3(-0.5f, -1, 0).normalized, // Down-Left
+        new Vector3(0.5f, -1, 0).normalized   // Down-Right
+    };
+
     void Start()
     {
-        direction = Vector3.down;
+        // Choose a random direction from the list
+        int randomIndex = Random.Range(0, directions.Count);
+        direction = directions[randomIndex];
 
         // Initialize the speed
         speed = initialSpeed;
