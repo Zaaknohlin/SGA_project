@@ -14,26 +14,14 @@ using UnityEngine;
 public class MoveSprite : MonoBehaviour
 {
     public float growthRate = 0.1f; // Amount by which the scale increase
-    public float initialSpeed = 1.0f;
+    public float initialSpeed = 0.1f;
     public float gravityAcceleration = 9.8f;
     private Vector3 direction;
     private float speed;
     private Camera mainCamera;
 
-    // List of possible directions
-    private List<Vector3> directions = new List<Vector3>
-    {
-        Vector3.down,
-        new Vector3(-0.5f, -1, 0).normalized, // Down-Left
-        new Vector3(0.5f, -1, 0).normalized   // Down-Right
-    };
-
     void Start()
     {
-        // Choose a random direction from the list
-        int randomIndex = Random.Range(0, directions.Count);
-        direction = directions[randomIndex];
-
         // Initialize the speed
         speed = initialSpeed;
 
@@ -49,9 +37,8 @@ public class MoveSprite : MonoBehaviour
         // Move the sprite in the chosen direction
         transform.Translate(direction * speed * Time.deltaTime);
 
-        // scale the sprite making it appear closer
+        // Scale the sprite making it appear closer
         Grow();
-
 
         // Check if the sprite is outside the camera view and destroy it if so
         if (!IsInView())
@@ -67,6 +54,7 @@ public class MoveSprite : MonoBehaviour
         return viewportPosition.x >= 0 && viewportPosition.x <= 1 &&
                viewportPosition.y >= 0 && viewportPosition.y <= 1;
     }
+
     private void Grow()
     {
         // Calculate the growth increment based on the growth rate and the time passed since the last frame
@@ -76,4 +64,14 @@ public class MoveSprite : MonoBehaviour
         transform.localScale += new Vector3(growthAmount, growthAmount, growthAmount);
     }
 
+    // Method to set the direction
+    public void SetDirection(Vector3 dir)
+    {
+        direction = dir;
+    }
+
+    public void SetGravity(float gravity)
+    {
+        gravityAcceleration = gravity;
+    }
 }
