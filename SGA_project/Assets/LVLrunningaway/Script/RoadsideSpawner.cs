@@ -43,12 +43,6 @@ public class RoadSideSpawner : MonoBehaviour
         while (true)
         {
             float elapsedTime = Time.time; // know for how long the game have been running.
-
-            //--------------------------------------------------------------------------------------- SPAWN RATE
-            // Calculate the next spawn time using the currently elapsed time and a random component
-            float spawnTime = (float)(2 * Math.Exp(-(Math.Log(2) * (elapsedTime / 200))));
-
-            yield return new WaitForSeconds((spawnTime));
             //--------------------------------------------------------------------------------------- Initial speed
             float innitialSpeed = (float)(0.5 * Math.Exp(-(Math.Log(2) * (elapsedTime / 200))));
 
@@ -79,6 +73,12 @@ public class RoadSideSpawner : MonoBehaviour
             moveSpriteI.SetPosition(initialPosition);
             moveSpriteI.SetGravity(currentObstacleAcceleration);
             moveSpriteI.SetSpeed(innitialSpeed);
+
+            //--------------------------------------------------------------------------------------- SPAWN RATE
+            // Calculate the next spawn time using the currently elapsed time and a random component
+            float spawnTime = (float)(2 * Math.Exp(-(Math.Log(2) * (elapsedTime / 200))));
+
+            yield return new WaitForSeconds((spawnTime));
         }
     }
 }

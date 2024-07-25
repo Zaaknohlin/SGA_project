@@ -98,5 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   growthRate: 0.1
-  initialSpeed: 10
-  gravityAcceleration: 4
+  initialSpeed: 0.5
+  gravityAcceleration: 1
+  direction: {x: -0.5, y: -1, z: 0}

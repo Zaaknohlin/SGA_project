@@ -16,7 +16,7 @@ public class MoveRoadside : MonoBehaviour
     public float growthRate = 0.1f; // Amount by which the scale increase
     public float initialSpeed = 0.1f;
     public float gravityAcceleration = 9.8f;
-    private Vector3 direction;
+    public Vector3 direction;
     private float speed;
     private Camera mainCamera;
 
