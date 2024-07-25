@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1426627115889509167}
   - component: {fileID: 9192300502950038799}
   - component: {fileID: 3668668502624671321}
-  - component: {fileID: 2494349590813607893}
+  - component: {fileID: 2094647373698886168}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -150,8 +150,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!70 &2494349590813607893
-CapsuleCollider2D:
+--- !u!61 &2094647373698886168
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -182,6 +182,16 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0055862963, y: 0.4618098}
-  m_Size: {x: 1.5061178, y: 2.3369498}
-  m_Direction: 0
+  m_Offset: {x: 0.30151796, y: -0.43634295}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.33544177, y: 0.28746367}
+    oldSize: {x: 2.21, y: 2.2}
+    newSize: {x: 0.13, y: 0.21}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.0856886, y: 0.39215422}
+  m_EdgeRadius: 0

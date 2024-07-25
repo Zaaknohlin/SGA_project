@@ -28,8 +28,6 @@ public class CatController : MonoBehaviour
         _animator.SetFloat("hor_move", Mathf.Abs(h));
         _animator.SetFloat("ver_move", v);
 
-        Debug.Log(h.ToString() + " " + v.ToString());
-
 
         gameObject.transform.position = new Vector2 (transform.position.x + (h * moveSpeed), 
         transform.position.y + (v * moveSpeed));
