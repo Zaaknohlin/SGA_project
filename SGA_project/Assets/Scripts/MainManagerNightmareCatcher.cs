@@ -1,19 +1,20 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEditor;
 
-public class MainManagerHubScene : MonoBehaviour
+public class MainManagerNightmarecatcher : MonoBehaviour
 {
     public Button nextScene;
     public Button previousScene;
-    public Button LVLrunningaway;
-    public Button quit;
 
     public GameObject pauseScreen;
     private bool isPaused;
+
+    public GameObject gameOverScreen;
+    private bool gameIsActive;
 
     // Start is called before the first frame update
     void Start()
@@ -30,24 +31,15 @@ public class MainManagerHubScene : MonoBehaviour
         }
     }
 
-    public void LoadGameScene1Scene()
+    public void LoadNextScene()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Nightmare-catcher");
     }
 
     public void LoadPreviousScene()
     {
-        SceneManager.LoadScene("FirstScene");
-    }
-
-    public void LoadLVLrunningawayScene()
-    {
-        SceneManager.LoadScene("LVLrunningaway");
-    }
-
-    public void Exit()
-    {
-        EditorApplication.ExitPlaymode();
+        SceneManager.LoadScene("HubScene");
     }
 
     void ChangePaused()
@@ -62,6 +54,22 @@ public class MainManagerHubScene : MonoBehaviour
         {
             isPaused = false;
             pauseScreen.SetActive(false);
+            Time.timeScale = 1.0f;
+        }
+    }
+
+    public void ChangeGameOver()
+    {
+        if (!gameIsActive)
+        {
+            gameIsActive = true;
+            gameOverScreen.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else if (gameIsActive)
+        {
+            gameIsActive = false;
+            gameOverScreen.SetActive(false);
             Time.timeScale = 1.0f;
         }
     }

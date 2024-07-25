@@ -13,6 +13,8 @@ public class PointSystem : MonoBehaviour
     public TextMeshProUGUI pointsText;
     public TextMeshProUGUI livesText;
 
+    private MainManagerNightmarecatcher mainManagerNightmarecatcherScript;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,8 @@ public class PointSystem : MonoBehaviour
 
         pointsText.text = "Score: " + points;
         livesText.text = "Lives: " + lives;
+
+        mainManagerNightmarecatcherScript = GameObject.Find("MainManager NightmareCatcher").GetComponent<MainManagerNightmarecatcher>();
     }
 
     // Update is called once per frame
@@ -37,10 +41,9 @@ public class PointSystem : MonoBehaviour
 
             pointsText.text = "Score: 0" ;
             Time.timeScale = 0f;
+            mainManagerNightmarecatcherScript.ChangeGameOver();
             return;
-            //After merge - activate canvas
         }
-        //Find text on the canvas and display
 
         pointsText.text = "Score: " + points;
     }
@@ -53,7 +56,7 @@ public class PointSystem : MonoBehaviour
             Destroy(player);
             Time.timeScale = 0f;
             livesText.text = "Lives: " + lives;
-            //After merge - activate canvas
+            mainManagerNightmarecatcherScript.ChangeGameOver();
         }
 
         livesText.text = "Lives: " + lives;
