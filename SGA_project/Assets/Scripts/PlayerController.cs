@@ -7,18 +7,18 @@ public class PlayerControler : MonoBehaviour
 {
     private float xPositionBound = 4f;
     public float speed = 10.0f;
+    private PointSystem pointSystem;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        pointSystem = GameObject.Find("Game Manager").GetComponent<PointSystem>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //TODO: If space is pressed enable movement of cats paw
 
         if (transform.position.x<-xPositionBound) 
         {
@@ -34,10 +34,18 @@ public class PlayerControler : MonoBehaviour
 
     }
 
+    //Player colides with spawn objects
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Obstacle"))
+        if (other.CompareTag("Enemie"))
         {
+            pointSystem.AddLive(-1);
+            Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("Powerup"))
+        {
+
+            pointSystem.AddPoint(1);
             Destroy(other.gameObject);
         }
     }
