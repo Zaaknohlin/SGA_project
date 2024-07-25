@@ -32,7 +32,7 @@ public class MainManagerHubScene : MonoBehaviour
 
     public void LoadGameScene1Scene()
     {
-        SceneManager.LoadScene("GameScene1");
+        SceneManager.LoadScene("Nightmare-catcher");
     }
 
     public void LoadPreviousScene()
