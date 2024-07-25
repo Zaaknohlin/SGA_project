@@ -9,6 +9,9 @@ public class MainManagerGameScene1 : MonoBehaviour
     public Button nextScene;
     public Button previousScene;
 
+    public GameObject pauseScreen;
+    private bool isPaused;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,10 @@ public class MainManagerGameScene1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            ChangePaused();
+        }
     }
 
     public void LoadNextScene()
@@ -29,5 +35,21 @@ public class MainManagerGameScene1 : MonoBehaviour
     public void LoadPreviousScene()
     {
         SceneManager.LoadScene("HubScene");
+    }
+
+    void ChangePaused() 
+    {
+        if (!isPaused) 
+        {
+            isPaused = true;
+            pauseScreen.SetActive(true);
+            Time.timeScale =0f;
+        }
+        else if(isPaused)
+        {
+            isPaused = false;
+            pauseScreen.SetActive(false);
+            Time.timeScale = 1.0f;
+        }
     }
 }
