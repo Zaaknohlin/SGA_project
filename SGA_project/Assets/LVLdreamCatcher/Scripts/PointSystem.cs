@@ -41,7 +41,7 @@ public class PointSystem : MonoBehaviour
 
             pointsText.text = "Score: 0" ;
             Time.timeScale = 0f;
-            mainManagerNightmarecatcherScript.ChangeGameOver();
+            mainManagerNightmarecatcherScript.Menu();
             return;
         }
 
@@ -56,7 +56,7 @@ public class PointSystem : MonoBehaviour
             Destroy(player);
             Time.timeScale = 0f;
             livesText.text = "Lives: " + lives;
-            mainManagerNightmarecatcherScript.ChangeGameOver();
+            mainManagerNightmarecatcherScript.Menu();
         }
 
         livesText.text = "Lives: " + lives;

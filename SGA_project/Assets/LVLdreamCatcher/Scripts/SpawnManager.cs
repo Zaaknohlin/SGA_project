@@ -15,8 +15,6 @@ public class Instantiation : MonoBehaviour
     private float spawnEnemieInterval = 1.5f;
     private float spawnPowerupInterval = 3.5f;
 
-
-
     // Update is called once per frame
     void Start()
     {
@@ -39,5 +37,19 @@ public class Instantiation : MonoBehaviour
         float randomPosition = Random.Range(-xPositionSpawn, xPositionSpawn);
         Vector3 spawnPosition = new Vector2(randomPosition, yPositionSpawn);
         Instantiate(powerupsPrefabs[powerupIndex], spawnPosition, powerupsPrefabs[powerupIndex].transform.rotation);
+    }
+
+    public void StopInvoke() 
+    {
+        CancelInvoke();
+    }
+
+    public void StartInvoke(float enemieInterval, float powerupInterval) 
+    {
+
+        InvokeRepeating("SpawnRandomEnemie", startEnemieDelay, enemieInterval);
+
+        InvokeRepeating("SpawnRandomPowerup", startPowerupDelay, powerupInterval);
+        Debug.Log("enemie:"+ enemieInterval+ "powerup" + powerupInterval);
     }
 }
