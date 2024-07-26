@@ -34,12 +34,12 @@ public class MainManagerNightmarecatcher : MonoBehaviour
     public void LoadNextScene()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Nightmare-catcher");
+        SceneManager.LoadScene("LVLdreamCatcher");
     }
 
     public void LoadPreviousScene()
     {
-        SceneManager.LoadScene("HubScene");
+        SceneManager.LoadScene("MainMenu");
     }
 
     void ChangePaused()
