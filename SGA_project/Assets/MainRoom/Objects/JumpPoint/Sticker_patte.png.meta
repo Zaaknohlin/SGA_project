@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f59af96a3156e3d4b85ad9632022f53f
+guid: 9086924dffa10cc4b9ce8cf1414122ec
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,64 +110,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jump_sprite_1
+      name: Sticker_patte_0
       rect:
         serializedVersion: 2
-        x: 574
-        y: 668
-        width: 200
-        height: 156
-      alignment: 9
-      pivot: {x: 0.18210754, y: 0.19711499}
+        x: 109
+        y: 1207
+        width: 737
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30533822576be5c4f9fab554aa98f67c
-      internalID: 821375131
+      spriteID: c8889140807649c499706e89ae1ddac1
+      internalID: -1321720685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jump_sprite_2
+      name: Sticker_patte_1
       rect:
         serializedVersion: 2
-        x: 22
-        y: 10
-        width: 173
-        height: 238
-      alignment: 9
-      pivot: {x: 0.5011568, y: 0.32918817}
-      border: {x: 7, y: 8, z: 16, w: 4}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0728cb8cbfdfaf84b8f60d01886d4e47
-      internalID: -2104135044
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: jump_sprite_4
-      rect:
-        serializedVersion: 2
-        x: 248
-        y: 207
-        width: 401
-        height: 369
-      alignment: 9
-      pivot: {x: 0.16917971, y: 0.22048081}
+        x: 1225
+        y: 803
+        width: 724
+        height: 622
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48f958847ad0eb3438f845d2af386d51
-      internalID: 959062430
+      spriteID: fdaec3740ec4ac141a3503df3d5c7a32
+      internalID: -155694355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sticker_patte_2
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 299
+        width: 782
+        height: 662
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9ead4af6c10e7b4eb4179d918d61677
+      internalID: 2012490227
       vertices: []
       indices: 
       edges: []
@@ -183,11 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      jump_sprite_0: 1361272143
-      jump_sprite_1: 821375131
-      jump_sprite_2: -2104135044
-      jump_sprite_3: -1469279114
-      jump_sprite_4: 959062430
+      Sticker_patte_0: -1321720685
+      Sticker_patte_1: -155694355
+      Sticker_patte_2: 2012490227
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
