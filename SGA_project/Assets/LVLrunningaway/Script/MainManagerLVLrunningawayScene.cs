@@ -17,12 +17,12 @@ public class MainManagerLVLrunningawayScene : MonoBehaviour
 
     public GameObject menuPanel;
 
-    private Instantiation instantiationScript;
+    private ObstacleSpawner obstacleSpawnerScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        //instantiationScript = GameObject.Find("Game Manager").GetComponent<Instantiation>();
+        obstacleSpawnerScript = GameObject.Find("ObstacleSpawner").GetComponent<ObstacleSpawner>();
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class MainManagerLVLrunningawayScene : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
             Menu();
-            //instantiationScript.StopInvoke();
+            //obstacleSpawnerScript.StopInvoke();
         }
     }
 
@@ -57,7 +57,7 @@ public class MainManagerLVLrunningawayScene : MonoBehaviour
     {
         if (!difficultyButtonWasClicled)
         {
-            //instantiationScript.StartInvoke(1f, 1f);
+            //obstacleSpawnerScript.StartInvoke(1f, 1f);
         }
         menuPanel.SetActive(false);
         Time.timeScale = 1f;
@@ -66,18 +66,18 @@ public class MainManagerLVLrunningawayScene : MonoBehaviour
     public void Easy()
     {
         difficultyButtonWasClicled = true;
-        //instantiationScript.StartInvoke(1f, 1f);
+        obstacleSpawnerScript.SetDifficulty(1f);
     }
 
     public void Medium()
     {
         difficultyButtonWasClicled = true;
-        //instantiationScript.StartInvoke(1f, 0.7f);
+        obstacleSpawnerScript.SetDifficulty(0.6f);
     }
 
     public void Hard()
     {
         difficultyButtonWasClicled = true;
-        //instantiationScript.StartInvoke(0.7f, 0.5f);
+        obstacleSpawnerScript.SetDifficulty(0.3f);
     }
 }

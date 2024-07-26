@@ -13,7 +13,7 @@ using System;
  */
 public class ObstacleSpawner : MonoBehaviour
 {
-
+    private float difficulty = 0f;
 
     // Public variables for obstacle prefab and lambda N
     public GameObject obstacleA;
@@ -42,9 +42,17 @@ public class ObstacleSpawner : MonoBehaviour
         StartCoroutine(SpawnObstacles());
     }
 
+    //////////////////////////////////////////////////////Difficulty
+    public void SetDifficulty(float difficultyValue) 
+    {
+        difficulty = difficultyValue;
+    }
+    //////////////////////////////////////////////////////Difficulty
+
     // Coroutine to spawn obstacles
     IEnumerator SpawnObstacles()
     {
+
         List<GameObject> obstaclePool = new List<GameObject> { obstacleA, obstacleB, obstacleC, obstacleD, obstacleE, obstacleF, obstacleG, obstacleH };
 
         while (true)
@@ -100,7 +108,11 @@ public class ObstacleSpawner : MonoBehaviour
             // Apply the jitter to the spawn time
             spawnTime = spawnTime * (1 + jitter);
 
-            yield return new WaitForSeconds(spawnTime);
+            ///////////////////////////////////////////////////////////////////////////////////EWE
+            Debug.Log("Difficulty inside method" + difficulty);
+
+            yield return new WaitForSeconds(spawnTime + difficulty);
+            ///////////////////////////////////////////////////////////////////////////////////EWE
 
             for (int i = 0; i < numberOfObstacles; i++)
             {
