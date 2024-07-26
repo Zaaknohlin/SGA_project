@@ -19,10 +19,15 @@ public class MainManagerLVLrunningawayScene : MonoBehaviour
 
     private ObstacleSpawner obstacleSpawnerScript;
 
+    private DataPersistanceManager dataPersistanceManagerScript;
+
     // Start is called before the first frame update
     void Start()
     {
         obstacleSpawnerScript = GameObject.Find("ObstacleSpawner").GetComponent<ObstacleSpawner>();
+
+        dataPersistanceManagerScript = GameObject.Find("Data Persistance Manager").GetComponent<DataPersistanceManager>();
+        dataPersistanceManagerScript.roomChangement = true;
     }
 
     // Update is called once per frame

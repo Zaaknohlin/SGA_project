@@ -4536,6 +4536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1909887815}
   - component: {fileID: 1909887814}
+  - component: {fileID: 1909887816}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged

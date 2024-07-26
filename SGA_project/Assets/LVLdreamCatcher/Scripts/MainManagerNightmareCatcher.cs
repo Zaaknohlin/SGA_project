@@ -20,10 +20,16 @@ public class MainManagerNightmarecatcher : MonoBehaviour
 
     private Instantiation instantiationScript;
 
+
+    private DataPersistanceManager dataPersistanceManagerScript;
+
     // Start is called before the first frame update
     void Start()
     {
         instantiationScript = GameObject.Find("Game Manager").GetComponent<Instantiation>();
+
+        dataPersistanceManagerScript = GameObject.Find("Data Persistance Manager").GetComponent<DataPersistanceManager>();
+        dataPersistanceManagerScript.roomChangement = true;
     }
 
     // Update is called once per frame
