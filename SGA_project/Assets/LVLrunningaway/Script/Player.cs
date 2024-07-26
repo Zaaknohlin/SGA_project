@@ -11,7 +11,7 @@ using UnityEngine;
  */
 public class Player : MonoBehaviour
 {
-    public float speed = 5.0f;
+    public float speed = 7.0f;
     public float leftBoundary = -5.0f;
     public float rightBoundary = 5.0f;
 
