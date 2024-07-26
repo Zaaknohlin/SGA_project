@@ -13,9 +13,17 @@ using System;
  */
 public class ObstacleSpawner : MonoBehaviour
 {
+
+
     // Public variables for obstacle prefab and lambda N
-    public GameObject obstaclePrefab;
-    public float lambda = 3.0f;
+    public GameObject obstacleA;
+    public GameObject obstacleB;
+    public GameObject obstacleC;
+    public GameObject obstacleD;
+    public GameObject obstacleE;
+    public GameObject obstacleF;
+    public GameObject obstacleG;
+    public GameObject obstacleH;
 
     // List of possible directions
     private List<Vector3> directions = new List<Vector3>
@@ -37,6 +45,8 @@ public class ObstacleSpawner : MonoBehaviour
     // Coroutine to spawn obstacles
     IEnumerator SpawnObstacles()
     {
+        List<GameObject> obstaclePool = new List<GameObject> { obstacleA, obstacleB, obstacleC, obstacleD, obstacleE, obstacleF, obstacleG, obstacleH };
+
         while (true)
         {
             float elapsedTime = Time.time; // know for how long the game has been running.
@@ -97,8 +107,9 @@ public class ObstacleSpawner : MonoBehaviour
                 // Choose a unique direction from the shuffled list
                 Vector3 chosenDirection = shuffledDirections[i % shuffledDirections.Count];
 
+                int obstacleDesignIndex = UnityEngine.Random.Range(0, 8);
                 // Spawn the obstacle at the spawner's position
-                GameObject obstacle = Instantiate(obstaclePrefab, transform.position, Quaternion.identity);
+                GameObject obstacle = Instantiate(obstaclePool[i], transform.position, Quaternion.identity);
 
                 // Set the direction for the MoveSprite component
                 MoveSprite moveSprite = obstacle.GetComponent<MoveSprite>();
