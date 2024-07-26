@@ -4,9 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemie
-  - Powerup
-  - Obstacle
+  - Interactions
+  - PauseBlur
+  - JumpPoint
+  - BotColliders
+  - TopColliders
   layers:
   - Default
   - TransparentFX
