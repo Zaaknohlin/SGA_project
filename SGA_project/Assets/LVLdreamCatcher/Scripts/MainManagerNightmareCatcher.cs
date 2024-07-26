@@ -9,68 +9,76 @@ public class MainManagerNightmarecatcher : MonoBehaviour
 {
     public Button nextScene;
     public Button previousScene;
+    public Button resumeGame;
+    public Button easy;
+    public Button medium;
+    public Button hard;
 
-    public GameObject pauseScreen;
-    private bool isPaused;
+    private bool difficultyButtonWasClicled = false;
 
-    public GameObject gameOverScreen;
-    private bool gameIsActive;
+    public GameObject menuPanel;
+
+    private Instantiation instantiationScript;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        instantiationScript = GameObject.Find("Game Manager").GetComponent<Instantiation>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
-            ChangePaused();
+            Menu();
+            instantiationScript.StopInvoke();
         }
     }
 
     public void LoadNextScene()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Nightmare-catcher");
+        SceneManager.LoadScene("LVLdreamCatcher");
     }
 
     public void LoadPreviousScene()
     {
-        SceneManager.LoadScene("HubScene");
+        SceneManager.LoadScene("MainRoom");
     }
 
-    void ChangePaused()
+    public void Menu()
     {
-        if (!isPaused)
-        {
-            isPaused = true;
-            pauseScreen.SetActive(true);
+            menuPanel.SetActive(true);
             Time.timeScale = 0f;
-        }
-        else if (isPaused)
-        {
-            isPaused = false;
-            pauseScreen.SetActive(false);
-            Time.timeScale = 1.0f;
-        }
+        
     }
 
-    public void ChangeGameOver()
+    public void Resume()
     {
-        if (!gameIsActive)
+        if (!difficultyButtonWasClicled)
         {
-            gameIsActive = true;
-            gameOverScreen.SetActive(true);
-            Time.timeScale = 0f;
+            instantiationScript.StartInvoke(1f, 1f);
         }
-        else if (gameIsActive)
-        {
-            gameIsActive = false;
-            gameOverScreen.SetActive(false);
-            Time.timeScale = 1.0f;
-        }
+        menuPanel.SetActive(false);
+        Time.timeScale = 1f;
+
+    }
+    public void Easy() 
+    {
+        difficultyButtonWasClicled = true;
+        instantiationScript.StartInvoke(1f, 1f);
+    }
+
+    public void Medium()
+    {
+        difficultyButtonWasClicled = true;
+        instantiationScript.StartInvoke(1f, 0.7f);
+    }
+
+    public void Hard()
+    {
+        difficultyButtonWasClicled = true;
+        instantiationScript.StartInvoke(0.7f, 0.5f);
     }
 }
