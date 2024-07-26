@@ -5,10 +5,15 @@ using UnityEngine;
 public class MoveForward : MonoBehaviour
 {
     public float speed = 5.0f;
+    public float rotationSpeed = 1f;
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector2.up * Time.deltaTime * speed);
+        transform.position += new Vector3(0, -speed * Time.deltaTime,0);
+        transform.Rotate(new Vector3(0, 0,  rotationSpeed));
     }
+
+
+
 }
