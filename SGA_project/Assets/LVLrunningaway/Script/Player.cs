@@ -15,8 +15,13 @@ public class Player : MonoBehaviour
     public float leftBoundary = -5.0f;
     public float rightBoundary = 5.0f;
 
+    private MainManagerLVLrunningawayScene mainManagerLVLrunningawaySceneScript;
+
     void Start()
     {
+
+        mainManagerLVLrunningawaySceneScript = GameObject.Find("Main Manager LVLrunningaway").GetComponent<MainManagerLVLrunningawayScene>();
+
         // Ensure the player has a Rigidbody2D component
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb == null)
@@ -92,5 +97,7 @@ public class Player : MonoBehaviour
         Time.timeScale = 0;
         // Or you can load a game over scene
         // SceneManager.LoadScene("GameOver");
+
+        mainManagerLVLrunningawaySceneScript.Menu();
     }
 }

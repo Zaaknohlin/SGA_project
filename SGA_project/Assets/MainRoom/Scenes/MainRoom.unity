@@ -1081,6 +1081,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1909887815}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -26.738}
+--- !u!1 &1637093329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1637093331}
+  - component: {fileID: 1637093330}
+  m_Layer: 0
+  m_Name: Room Arrangement Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1637093330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637093329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a4bf7420c2e4845ab78ec630626e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canChangeRoom: 0
+--- !u!4 &1637093331
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637093329}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 937.1868, y: 504.8198, z: -6.639035}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1777802673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,6 +1362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1909887815}
   - component: {fileID: 1909887814}
+  - component: {fileID: 1909887816}
   m_Layer: 0
   m_Name: room_spritesheet_4
   m_TagString: Untagged
@@ -1395,6 +1441,19 @@ Transform:
   - {fileID: 442708033}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1909887816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909887813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a4bf7420c2e4845ab78ec630626e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canChangeRoom: 0
 --- !u!1 &1953278394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1899,3 +1958,4 @@ SceneRoots:
   - {fileID: 1953278397}
   - {fileID: 693573770}
   - {fileID: 2125717028}
+  - {fileID: 1637093331}

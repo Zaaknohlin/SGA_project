@@ -7,6 +7,8 @@ public class DataPersistanceManager : MonoBehaviour
 {
     public static DataPersistanceManager Instance;
 
+    public bool roomChangement = false;
+
     private void Awake()
     {
 
