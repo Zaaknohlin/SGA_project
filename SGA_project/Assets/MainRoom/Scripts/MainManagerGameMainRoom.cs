@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MainManagerLVLrunningawayScene : MonoBehaviour
+public class MainManagerMainRoom : MonoBehaviour
 {
     public Button nextScene;
     public Button previousScene;
@@ -29,7 +29,7 @@ public class MainManagerLVLrunningawayScene : MonoBehaviour
 
     public void LoadNextScene()
     {
-        SceneManager.LoadScene("LVLrunningaway");
+        SceneManager.LoadScene("GameScene1");
     }
 
     public void LoadPreviousScene()
@@ -37,15 +37,15 @@ public class MainManagerLVLrunningawayScene : MonoBehaviour
         SceneManager.LoadScene("HubScene");
     }
 
-    void ChangePaused()
+    void ChangePaused() 
     {
-        if (!isPaused)
+        if (!isPaused) 
         {
             isPaused = true;
             pauseScreen.SetActive(true);
-            Time.timeScale = 0f;
+            Time.timeScale =0f;
         }
-        else if (isPaused)
+        else if(isPaused)
         {
             isPaused = false;
             pauseScreen.SetActive(false);

@@ -341,8 +341,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1568209932}
-        m_TargetAssemblyTypeName: MainManagerScene1, Assembly-CSharp
-        m_MethodName: LoadNextScene
+        m_TargetAssemblyTypeName: MainManagerIntroCinematic, Assembly-CSharp
+        m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -606,8 +606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cd66cd2f0cf2874ea3c54d521d52785, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: {fileID: 680236769}
-  previousScene: {fileID: 2123355402}
+  MainMenuButton: {fileID: 0}
+  cinematicSceneButton: {fileID: 0}
 --- !u!1 &1663707380
 GameObject:
   m_ObjectHideFlags: 0

@@ -550,8 +550,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f880038f9302b4fb2c3ec0255c024f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: {fileID: 1770097945}
-  previousScene: {fileID: 1139384453}
+  restartButton: {fileID: 0}
+  mainMenuButton: {fileID: 0}
   pauseScreen: {fileID: 1705362501}
 --- !u!4 &814080359
 Transform:
@@ -972,7 +972,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 814080358}
         m_TargetAssemblyTypeName: MainManagerLVLrunningawayScene, Assembly-CSharp
-        m_MethodName: LoadPreviousScene
+        m_MethodName: LoadMainHub
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1800,7 +1800,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 814080358}
         m_TargetAssemblyTypeName: MainManagerLVLrunningawayScene, Assembly-CSharp
-        m_MethodName: LoadNextScene
+        m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

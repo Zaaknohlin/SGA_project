@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using Unity.VisualScripting;
 
-public class MainManagerHubScene : MonoBehaviour
+public class MainManagerMenuHub : MonoBehaviour
 {
-    public Button nextScene;
-    public Button previousScene;
-    public Button LVLrunningaway;
+    public Button MainRoomButton;
+    public Button cinematicButton;
+    public Button LVLrunningawayButton;
+    public Button LVLdreamCatcherButton;
     public Button quit;
 
     public GameObject pauseScreen;
@@ -18,7 +20,11 @@ public class MainManagerHubScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        MainRoomButton.onClick.AddListener(LoadMainRoom);
+        cinematicButton.onClick.AddListener(LoadCinematic);
+        LVLrunningawayButton.onClick.AddListener(LoadLVLrunningawayScene);
+        LVLdreamCatcherButton.onClick.AddListener(LoadLVLdreamCatcher);
+        quit.onClick.AddListener(Exit);
     }
 
     // Update is called once per frame
@@ -30,19 +36,23 @@ public class MainManagerHubScene : MonoBehaviour
         }
     }
 
-    public void LoadGameScene1Scene()
+    public void LoadCinematic()
     {
-        SceneManager.LoadScene("Nightmare-catcher");
+        SceneManager.LoadScene("IntroCinematic");
     }
 
-    public void LoadPreviousScene()
+    public void LoadMainRoom()
     {
-        SceneManager.LoadScene("FirstScene");
+        SceneManager.LoadScene("MainRoom");
     }
 
     public void LoadLVLrunningawayScene()
     {
         SceneManager.LoadScene("LVLrunningaway");
+    }
+    public void LoadLVLdreamCatcher()
+    {
+        SceneManager.LoadScene("LVLdreamCatcher");
     }
 
     public void Exit()

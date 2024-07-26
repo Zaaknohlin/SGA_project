@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MainManagerGameScene1 : MonoBehaviour
+public class MainManagerLVLrunningawayScene : MonoBehaviour
 {
-    public Button nextScene;
-    public Button previousScene;
+    public Button restartButton;
+    public Button mainMenuButton;
 
     public GameObject pauseScreen;
     private bool isPaused;
@@ -15,7 +15,8 @@ public class MainManagerGameScene1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        restartButton.onClick.AddListener(Restart);
+        mainMenuButton.onClick.AddListener(LoadMainHub);
     }
 
     // Update is called once per frame
@@ -27,25 +28,25 @@ public class MainManagerGameScene1 : MonoBehaviour
         }
     }
 
-    public void LoadNextScene()
+    public void Restart()
     {
-        SceneManager.LoadScene("GameScene1");
+        SceneManager.LoadScene("LVLrunningaway");
     }
 
-    public void LoadPreviousScene()
+    public void LoadMainHub()
     {
-        SceneManager.LoadScene("HubScene");
+        SceneManager.LoadScene("MainMenu");
     }
 
-    void ChangePaused() 
+    void ChangePaused()
     {
-        if (!isPaused) 
+        if (!isPaused)
         {
             isPaused = true;
             pauseScreen.SetActive(true);
-            Time.timeScale =0f;
+            Time.timeScale = 0f;
         }
-        else if(isPaused)
+        else if (isPaused)
         {
             isPaused = false;
             pauseScreen.SetActive(false);
