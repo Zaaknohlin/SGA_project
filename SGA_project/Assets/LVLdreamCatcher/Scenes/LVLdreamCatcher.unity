@@ -1522,6 +1522,7 @@ GameObject:
   - component: {fileID: 880762452}
   - component: {fileID: 880762451}
   - component: {fileID: 880762450}
+  - component: {fileID: 880762454}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1614,6 +1615,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &880762454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880762449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c6551599616715409ded3a9447f7524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
 --- !u!1 &917642737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,8 +1801,6 @@ MonoBehaviour:
   - {fileID: 2542756242175213743, guid: 0f9bb894662eecd4595b6bfa52b5ed75, type: 3}
   - {fileID: 4682911474184739115, guid: c07600a61c49ac94898551d59d5c4c69, type: 3}
   - {fileID: 9179163365872494564, guid: 47ca2790c4e603049a4ec101a93161a7, type: 3}
-  spawnEnemieInterval: 1.5
-  spawnPowerupInterval: 3.5
 --- !u!4 &940401393
 Transform:
   m_ObjectHideFlags: 0
