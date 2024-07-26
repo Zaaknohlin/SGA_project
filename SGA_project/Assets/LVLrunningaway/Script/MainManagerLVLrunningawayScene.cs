@@ -6,51 +6,78 @@ using UnityEngine.SceneManagement;
 
 public class MainManagerLVLrunningawayScene : MonoBehaviour
 {
-    public Button restartButton;
-    public Button mainMenuButton;
+    public Button nextScene;
+    public Button previousScene;
+    public Button resumeGame;
+    public Button easy;
+    public Button medium;
+    public Button hard;
 
-    public GameObject pauseScreen;
-    private bool isPaused;
+    private bool difficultyButtonWasClicled = false;
+
+    public GameObject menuPanel;
+
+    private Instantiation instantiationScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        restartButton.onClick.AddListener(Restart);
-        mainMenuButton.onClick.AddListener(LoadMainHub);
+       // instantiationScript = GameObject.Find("Game Manager").GetComponent<Instantiation>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
-            ChangePaused();
+            Menu();
+           // instantiationScript.StopInvoke();
         }
     }
 
-    public void Restart()
+    public void LoadNextScene()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("LVLrunningaway");
     }
 
-    public void LoadMainHub()
+    public void LoadPreviousScene()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainRoom");
     }
 
-    void ChangePaused()
+    public void Menu()
     {
-        if (!isPaused)
+        menuPanel.SetActive(true);
+        Time.timeScale = 0f;
+
+    }
+
+    public void Resume()
+    {
+        if (!difficultyButtonWasClicled)
         {
-            isPaused = true;
-            pauseScreen.SetActive(true);
-            Time.timeScale = 0f;
+            //instantiationScript.StartInvoke(1f, 1f);
         }
-        else if (isPaused)
-        {
-            isPaused = false;
-            pauseScreen.SetActive(false);
-            Time.timeScale = 1.0f;
-        }
+        menuPanel.SetActive(false);
+        Time.timeScale = 1f;
+
+    }
+    public void Easy()
+    {
+        difficultyButtonWasClicled = true;
+        //instantiationScript.StartInvoke(1f, 1f);
+    }
+
+    public void Medium()
+    {
+        difficultyButtonWasClicled = true;
+        //instantiationScript.StartInvoke(1f, 0.7f);
+    }
+
+    public void Hard()
+    {
+        difficultyButtonWasClicled = true;
+        //instantiationScript.StartInvoke(0.7f, 0.5f);
     }
 }
