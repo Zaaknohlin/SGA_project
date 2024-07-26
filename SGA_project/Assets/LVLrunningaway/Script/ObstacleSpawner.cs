@@ -109,7 +109,7 @@ public class ObstacleSpawner : MonoBehaviour
 
                 int obstacleDesignIndex = UnityEngine.Random.Range(0, 8);
                 // Spawn the obstacle at the spawner's position
-                GameObject obstacle = Instantiate(obstaclePool[i], transform.position, Quaternion.identity);
+                GameObject obstacle = Instantiate(obstaclePool[obstacleDesignIndex], transform.position, Quaternion.identity);
 
                 // Set the direction for the MoveSprite component
                 MoveSprite moveSprite = obstacle.GetComponent<MoveSprite>();
