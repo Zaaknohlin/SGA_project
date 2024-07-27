@@ -9,6 +9,10 @@ TagManager:
   - JumpPoint
   - BotColliders
   - TopColliders
+  - Enemie
+  - Powerup
+  - Obstacle
+
   layers:
   - Default
   - TransparentFX

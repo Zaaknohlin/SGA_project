@@ -24,6 +24,7 @@ public class ObjectController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E) && _enabled)
         {
+            transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, 0);
             _enabled = false;
             _isDisplaying = true;
 
@@ -41,6 +42,7 @@ public class ObjectController : MonoBehaviour
         }
         else if(Input.GetKeyDown(KeyCode.E) && _isDisplaying)
         {
+            
             _isDisplaying = false;
             Debug.Log("popout start");
             _animator.Play("popOut");
@@ -59,6 +61,21 @@ public class ObjectController : MonoBehaviour
             Debug.Log("staying");
         }
         
+        
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.tag == "Player")
+        {
+            _enabled = false;
+            Debug.Log("staying");
+        }
+    }
+
+    public void resetPosition()
+    {
+        transform.position = Vector3.zero;
     }
 
 }

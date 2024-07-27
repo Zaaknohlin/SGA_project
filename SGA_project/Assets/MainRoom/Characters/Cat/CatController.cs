@@ -30,9 +30,6 @@ public class CatController : MonoBehaviour
 
     [SerializeField] private GameObject[] _botJumpPoints;
 
-
-    private bool isInteracted = false;
-
     [SerializeField] Transform arrivalTransform;
 
     void Start()
@@ -124,7 +121,6 @@ public class CatController : MonoBehaviour
         if(collider.tag == "Interactions")
         {
             _question.SetActive(true);
-            isInteracted = true;
         }
         // Detect JumpPoints
         if(collider.tag == "JumpPoint")
@@ -141,7 +137,6 @@ public class CatController : MonoBehaviour
         if(other.tag == "Interactions")
         {
             _question.SetActive(false);
-            isInteracted = false;
         }
         // Detect JumpPoints
         if(other.tag == "JumpPoint")
