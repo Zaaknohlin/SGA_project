@@ -13,7 +13,7 @@ public class PointSystem : MonoBehaviour
     public TextMeshProUGUI pointsText;
     public TextMeshProUGUI livesText;
 
-    private MainManagerNightmarecatcher mainManagerNightmarecatcherScript;
+    private MainManagerNightmareCatcher MainManagerNightmareCatcher;
 
     private DataPersistanceManager dataPersistanceManagerScript;
     private Instantiation instantiationScript;
@@ -26,7 +26,10 @@ public class PointSystem : MonoBehaviour
         pointsText.text = "Score: " + points;
         livesText.text = "Lives: " + lives;
 
-        mainManagerNightmarecatcherScript = GameObject.Find("MainManager NightmareCatcher").GetComponent<MainManagerNightmarecatcher>();
+        MainManagerNightmareCatcher = GameObject.Find("MainManager NightmareCatcher").GetComponent<MainManagerNightmareCatcher>();
+
+        dataPersistanceManagerScript = GameObject.Find("Data Persistance Manager").GetComponent<DataPersistanceManager>();
+        
     }
 
     // Update is called once per frame
@@ -41,13 +44,12 @@ public class PointSystem : MonoBehaviour
         {
             pointsText.text = "Score: 0" ;
             Time.timeScale = 0f;
-            mainManagerNightmarecatcherScript.Menu();
+            MainManagerNightmareCatcher.Menu();
             return;
-        } else if (points > 9) { // win condition
-            dataPersistanceManagerScript = GameObject.Find("Data Persistance Manager").GetComponent<DataPersistanceManager>();
+        } else if (points == 2) { // win condition
             dataPersistanceManagerScript.roomChangementDreamCatcher = true;
             Time.timeScale = 0f;
-            mainManagerNightmarecatcherScript.Menu();
+            MainManagerNightmareCatcher.Menu();
         }
         pointsText.text = "Score: " + points;
     }
@@ -59,7 +61,7 @@ public class PointSystem : MonoBehaviour
             Destroy(player);
             Time.timeScale = 0f;
             livesText.text = "Lives: " + lives;
-            mainManagerNightmarecatcherScript.Menu();
+            MainManagerNightmareCatcher.Menu();
         }
         livesText.text = "Lives: " + lives;
     }

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MainManagerNightmarecatcher : MonoBehaviour
+public class MainManagerNightmareCatcher : MonoBehaviour
 {
     public Button nextScene;
     public Button previousScene;
