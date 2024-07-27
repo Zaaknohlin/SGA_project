@@ -1977,11 +1977,13 @@ GameObject:
   m_Layer: 0
   m_Name: LowTable
   m_TagString: BotColliders
+
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!60 &483228967
+
+
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2292,7 +2294,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+
   - component: {fileID: 642265837}
+
   m_Layer: 0
   m_Name: TopCouch
   m_TagString: TopColliders
@@ -2319,7 +2323,8 @@ Transform:
   - {fileID: 999209315}
   m_Father: {fileID: 143720374}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &693573767
+
+
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7570,3 +7575,4 @@ SceneRoots:
   - {fileID: 1825429099}
   - {fileID: 1658828467}
   - {fileID: 4400343851325755381}
+

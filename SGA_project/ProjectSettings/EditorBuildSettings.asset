@@ -7,5 +7,17 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/MainRoom/Scenes/MainRoom.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 7216caac14d856c40861254c9fc62cec
+  - enabled: 1
+    path: Assets/MainRoom/Scenes/MainMenu.unity
+    guid: 7e373478a1c77df41a39f3eb46a9bf70
+  - enabled: 1
+    path: Assets/LVLrunningaway/Scenes/LVLrunningaway.unity
+    guid: 3f42d386bdb84ba47ab01e46d5bb651a
+  - enabled: 1
+    path: Assets/LVLdreamCatcher/Scenes/LVLdreamCatcher.unity
+    guid: 7995d7f1e03496249abdf940b3a5d3e4
+  - enabled: 1
+    path: Assets/MainRoom/Scenes/IntroCinematic.unity
+    guid: 267121e3d52890542bbbec290494661f
   m_configObjects: {}

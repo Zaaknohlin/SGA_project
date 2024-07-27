@@ -9,6 +9,10 @@ TagManager:
   - JumpPoint
   - BotColliders
   - TopColliders
+  - Enemie
+  - Powerup
+  - Obstacle
+
   layers:
   - Default
   - TransparentFX
@@ -45,4 +49,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Game
+    uniqueID: 723984527
     locked: 0
