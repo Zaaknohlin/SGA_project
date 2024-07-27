@@ -13,6 +13,7 @@ TagManager:
   - Powerup
   - Obstacle
   - Bed
+  - MGTrigger
   layers:
   - Default
   - TransparentFX

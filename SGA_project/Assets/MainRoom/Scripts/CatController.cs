@@ -32,6 +32,8 @@ public class CatController : MonoBehaviour
 
     [SerializeField] Transform arrivalTransform;
 
+    [SerializeField] private GameObject _textBox;
+
     void Start()
     {
         _renderer = GetComponent<SpriteRenderer>();
@@ -129,6 +131,12 @@ public class CatController : MonoBehaviour
             _exclamation.SetActive(true);
             arrivalTransform = collider.transform;
         }
+        if(collider.tag == "MGTrigger")
+        {
+            // trigger textbox
+            _textBox.SetActive(true);
+            
+        }
     }
 
     public void OnTriggerExit2D(Collider2D other)
@@ -143,6 +151,12 @@ public class CatController : MonoBehaviour
         {
             canJump = false;
             _exclamation.SetActive(false);
+        }
+        if(other.tag == "MGTrigger")
+        {
+            // trigger textbox out
+            _textBox.SetActive(false);
+            
         }
     }
 
