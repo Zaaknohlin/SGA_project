@@ -32,7 +32,10 @@ public class CatController : MonoBehaviour
 
     [SerializeField] Transform arrivalTransform;
 
-    [SerializeField] private GameObject _textBox;
+    [SerializeField] private GameObject _textBox_1;
+
+    [SerializeField] private GameObject _textBox_2;
+
 
     void Start()
     {
@@ -134,8 +137,13 @@ public class CatController : MonoBehaviour
         if(collider.tag == "MGTrigger")
         {
             // trigger textbox
-            _textBox.SetActive(true);
+            _textBox_1.SetActive(true);
             
+        }
+        if(collider.tag == "MGTrigger_2")
+        {
+            // trigger textbox
+            _textBox_2.SetActive(true);
         }
     }
 
@@ -155,8 +163,12 @@ public class CatController : MonoBehaviour
         if(other.tag == "MGTrigger")
         {
             // trigger textbox out
-            _textBox.SetActive(false);
-            
+            _textBox_1.SetActive(false);
+        }
+        if(other.tag == "MGTrigger_2")
+        {
+            // trigger textbox
+            _textBox_2.SetActive(false);
         }
     }
 
