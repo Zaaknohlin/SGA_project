@@ -13,7 +13,7 @@ public class CatController : MonoBehaviour
 
     public bool canMove = true;
 
-    public int level = 0;
+    public int crtLevel = 0;
     [SerializeField] private float moveSpeed;
     [SerializeField] private Vector2 jumpHeight = new Vector2(0, 0.01f);
 
@@ -25,6 +25,10 @@ public class CatController : MonoBehaviour
     [SerializeField] private GameObject[] _topColliders;
 
     [SerializeField] private GameObject[] _roomColliders;
+
+    [SerializeField] private GameObject[] _jumpPoints;
+
+    [SerializeField] private GameObject[] _botJumpPoints;
 
 
     private bool isInteracted = false;
@@ -73,37 +77,49 @@ public class CatController : MonoBehaviour
         // Jump
         if(Input.GetKey(KeyCode.Space) && canJump)
         {
-
             deactivateAllColliders();
 
             canMove = false;
             var posDelta = transform.position.x - arrivalTransform.position.x;
             Debug.Log(posDelta);
-            if(posDelta < 0)
-            {
-                // Animate to the right
-                if(_renderer.flipX){
-                    _renderer.flipX = false;
+            if(crtLevel == 0){
+                if(posDelta < 0)
+                {
+                    // Animate to the right
+                    if(_renderer.flipX){
+                        _renderer.flipX = false;
+                    }
+                }else
+                {
+                    // Animate to the left
+                    if(!_renderer.flipX)
+                    {
+                        _renderer.flipX = true;
+                    }
                 }
-            }else
+            }else if(crtLevel == 1)
             {
-                // Animate to the left
-                if(!_renderer.flipX)
+                if(posDelta < 0)
                 {
                     _renderer.flipX = true;
                 }
             }
 
-            // Play jump animation
-            _animator.Play("Jump");
+            if(crtLevel == 0)
+            {
+                // Play jump animation
+                _animator.Play("Jump");
+            }else if(crtLevel == 1)
+            {
+                _animator.Play("botJump");
+            }
+
         }
 
     }
 
     public void OnTriggerEnter2D(Collider2D collider)
     {
-       
-
         // Pop the question mark when approaching a POI
         if(collider.tag == "Interactions")
         {
@@ -148,30 +164,53 @@ public class CatController : MonoBehaviour
         transform.position = arrivalTransform.position;
     }
 
-    // public void ActivateAllColliders()
-    // {
-    //     foreach (var collider in _botColliders)
-    //     {
-    //         collider.SetActive(true);
-    //     }
-    //     foreach (var collider in _topColliders)
-    //     {
-    //         collider.SetActive(true);
-    //     }
-    // }
 
     // ANIMATION CONTROLLED : Activate colliders according to level of navigation
     private void updateNavLvl(int nextLvl)
     {
         if(nextLvl == 0)
         {
-            // Deactivate top colliders and activate bot colliders
+            crtLevel = 0;
+            // Activate bot colliders
+            foreach (var collider in _botColliders)
+            {
+                collider.SetActive(true);
+            }
+
+            // Activate room colliders
+            foreach (var collider in _roomColliders)
+            {
+                collider.SetActive(true);
+            }
+
+            // deactivate bot jumpPoints
+            foreach (var point in _botJumpPoints)
+            {
+                point.SetActive(false);
+            }
+            // activate top jump points
+            foreach (var point in _jumpPoints)
+            {
+                point.SetActive(true);
+            }
+
         }else if(nextLvl == 1)
         {
+            crtLevel = 1;
             // Activate top colliders
             foreach (var collider in _topColliders)
             {
                 collider.SetActive(true);
+            }
+            // deactivate top jumpPoints
+            foreach (var point in _jumpPoints)
+            {
+                point.SetActive(false);
+            }
+            // activate bot jumpPoints
+            foreach (var point in _botJumpPoints)
+            {
+                point.SetActive(true);
             }
         }
     }
