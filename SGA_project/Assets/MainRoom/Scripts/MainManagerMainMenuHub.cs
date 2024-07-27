@@ -38,6 +38,7 @@ public class MainManagerMenuHub : MonoBehaviour
 
     public void LoadCinematic()
     {
+        print("TEST");
         SceneManager.LoadScene("IntroCinematic");
     }
 
