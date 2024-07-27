@@ -29,7 +29,7 @@ public class PointSystem : MonoBehaviour
         MainManagerNightmareCatcher = GameObject.Find("MainManager NightmareCatcher").GetComponent<MainManagerNightmareCatcher>();
 
         dataPersistanceManagerScript = GameObject.Find("Data Persistance Manager").GetComponent<DataPersistanceManager>();
-        
+        GameObject.FindFirstObjectByType<DataPersistanceManager>();
     }
 
     // Update is called once per frame
