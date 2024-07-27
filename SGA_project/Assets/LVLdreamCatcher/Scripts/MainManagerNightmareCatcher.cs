@@ -21,7 +21,7 @@ public class MainManagerNightmarecatcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        instance = GameObject.Find("Instantiation").GetComponent<Instantiation>();
+        instance = GameObject.Find("Game Manager").GetComponent<Instantiation>();
     }
 
     // Update is called once per frame
