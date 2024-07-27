@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MGLController : MonoBehaviour
 {
@@ -20,9 +21,18 @@ public class MGLController : MonoBehaviour
     {
         // trigger the text bubble
 
-        // Wait for interaction button
 
-        // Switch scene
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        // Wait for interaction button
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            // Switch scene
+            SceneManager.LoadScene("LVLdreamCatcher");
+            // SceneManager.LoadScene("LVLrunningaway");
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
