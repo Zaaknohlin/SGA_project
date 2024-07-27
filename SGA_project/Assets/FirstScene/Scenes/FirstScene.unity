@@ -534,7 +534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49326452da1f2bb429c5ac5ee60557c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomChangement: 0
+  roomChangementDreamCatcher: 0
+  roomChangementRunningAway: 0
 --- !u!1 &2138034025
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +639,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0869bcc8afadcbd4182169d7dc3e6484, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 201b327e86d75b2408cf66dd849fb79e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
