@@ -11,7 +11,6 @@ public class CatCollision : MonoBehaviour
     {
         roomArrangementScript = GameObject.Find("room_spritesheet_4").GetComponent<RoomArrangement>();
     }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Bed"))
@@ -31,7 +30,6 @@ public class CatCollision : MonoBehaviour
             }
         }
     }
-
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Bed"))

@@ -57,7 +57,8 @@ public class MainManagerMenuHub : MonoBehaviour
 
     public void Exit()
     {
-        EditorApplication.ExitPlaymode();
+        Application.Quit();
+        //EditorApplication.ExitPlaymode(); // ONLY IN EDITOR MODE
     }
 
     void ChangePaused()

@@ -14,8 +14,10 @@ public class Player : MonoBehaviour
     public float speed = 7.0f;
     public float leftBoundary = -5.0f;
     public float rightBoundary = 5.0f;
-
+    private float currentTime;
     private MainManagerLVLrunningawayScene mainManagerLVLrunningawaySceneScript;
+    private DataPersistanceManager dataPersistanceManagerScript;
+    private Instantiation instantiationScript;
 
     void Start()
     {
@@ -34,6 +36,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentTime += Time.deltaTime;
+        if(currentTime>90f)
+        {
+            GameOverWin();
+        }
         HandleMovement();
     }
 
@@ -85,14 +92,29 @@ public class Player : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            GameOver();
+            GameOverLoose();
         }
     }
 
-    void GameOver()
+    void GameOverWin()
     {
         // Implement your game over logic here
-        Debug.Log("Game Over!");
+        Debug.Log("You won!");
+        // For example, you can stop the game
+        Time.timeScale = 0;
+        // Or you can load a game over scene
+        // SceneManager.LoadScene("GameOver");
+        instantiationScript = GameObject.Find("Game Manager").GetComponent<Instantiation>();
+
+        dataPersistanceManagerScript = GameObject.Find("Data Persistance Manager").GetComponent<DataPersistanceManager>();
+        dataPersistanceManagerScript.roomChangementRunningAway = true;
+        mainManagerLVLrunningawaySceneScript.Menu();
+    }
+
+    void GameOverLoose()
+    {
+        // Implement your game over logic here
+        Debug.Log("You lost. Game Over!");
         // For example, you can stop the game
         Time.timeScale = 0;
         // Or you can load a game over scene
