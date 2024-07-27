@@ -43,7 +43,7 @@ public class MainManagerMainRoom : MonoBehaviour
         {
             isPaused = true;
             pauseScreen.SetActive(true);
-            Time.timeScale =0f;
+            Time.timeScale = 0f;
         }
         else if(isPaused)
         {

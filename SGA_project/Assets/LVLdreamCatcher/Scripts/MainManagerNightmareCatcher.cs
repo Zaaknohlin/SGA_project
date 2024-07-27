@@ -42,6 +42,7 @@ public class MainManagerNightmareCatcher : MonoBehaviour
 
     public void LoadPreviousScene()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainRoom");
     }
 
