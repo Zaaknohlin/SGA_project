@@ -7,12 +7,11 @@ public class DataPersistanceManager : MonoBehaviour
 {
     public static DataPersistanceManager Instance;
 
-    public bool roomChangement = false;
+    public bool roomChangementDreamCatcher = false;
+    public bool roomChangementRunningAway = false;
 
     private void Awake()
     {
-
-
         if (Instance != null)
         {
             Destroy(gameObject);

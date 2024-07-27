@@ -15,21 +15,13 @@ public class MainManagerNightmarecatcher : MonoBehaviour
     public Button hard;
 
     private bool difficultyButtonWasClicled = false;
-
+    private Instantiation instance;
     public GameObject menuPanel;
-
-    private Instantiation instantiationScript;
-
-
-    private DataPersistanceManager dataPersistanceManagerScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        instantiationScript = GameObject.Find("Game Manager").GetComponent<Instantiation>();
-
-        dataPersistanceManagerScript = GameObject.Find("Data Persistance Manager").GetComponent<DataPersistanceManager>();
-        dataPersistanceManagerScript.roomChangement = true;
+        instance = GameObject.Find("Instantiation").GetComponent<Instantiation>();
     }
 
     // Update is called once per frame
@@ -38,7 +30,7 @@ public class MainManagerNightmarecatcher : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape))
         {
             Menu();
-            instantiationScript.StopInvoke();
+            instance.StopInvoke();
         }
     }
 
@@ -57,34 +49,32 @@ public class MainManagerNightmarecatcher : MonoBehaviour
     {
             menuPanel.SetActive(true);
             Time.timeScale = 0f;
-        
     }
 
     public void Resume()
     {
         if (!difficultyButtonWasClicled)
         {
-            instantiationScript.StartInvoke(1f, 1f);
+            instance.StartInvoke(1f, 1f);
         }
         menuPanel.SetActive(false);
         Time.timeScale = 1f;
-
     }
     public void Easy() 
     {
         difficultyButtonWasClicled = true;
-        instantiationScript.StartInvoke(1f, 1f);
+        instance.StartInvoke(1f, 1f);
     }
 
     public void Medium()
     {
         difficultyButtonWasClicled = true;
-        instantiationScript.StartInvoke(1f, 0.7f);
+        instance.StartInvoke(1f, 0.7f);
     }
 
     public void Hard()
     {
         difficultyButtonWasClicled = true;
-        instantiationScript.StartInvoke(0.7f, 0.5f);
+        instance.StartInvoke(0.7f, 0.5f);
     }
 }

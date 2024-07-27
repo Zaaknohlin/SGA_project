@@ -15,6 +15,8 @@ public class PointSystem : MonoBehaviour
 
     private MainManagerNightmarecatcher mainManagerNightmarecatcherScript;
 
+    private DataPersistanceManager dataPersistanceManagerScript;
+    private Instantiation instantiationScript;
 
     // Start is called before the first frame update
     void Start()
@@ -32,22 +34,22 @@ public class PointSystem : MonoBehaviour
     {
         
     }
-
     public void AddPoint(int value) 
     {
         points+=value;
         if (points < 0)
         {
-
             pointsText.text = "Score: 0" ;
             Time.timeScale = 0f;
             mainManagerNightmarecatcherScript.Menu();
             return;
+        } else if (points > 9) { // win condition
+            dataPersistanceManagerScript = GameObject.Find("Data Persistance Manager").GetComponent<DataPersistanceManager>();
+            dataPersistanceManagerScript.roomChangementDreamCatcher = true;
+            mainManagerNightmarecatcherScript.Menu();
         }
-
         pointsText.text = "Score: " + points;
     }
-
     public void AddLive(int value) 
     {
         lives += value;
@@ -58,7 +60,6 @@ public class PointSystem : MonoBehaviour
             livesText.text = "Lives: " + lives;
             mainManagerNightmarecatcherScript.Menu();
         }
-
         livesText.text = "Lives: " + lives;
     }
 }

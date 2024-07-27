@@ -12,22 +12,16 @@ public class MainManagerLVLrunningawayScene : MonoBehaviour
     public Button easy;
     public Button medium;
     public Button hard;
+    private ObstacleSpawner instance;
 
     private bool difficultyButtonWasClicled = false;
 
     public GameObject menuPanel;
 
-    private ObstacleSpawner obstacleSpawnerScript;
-
-    private DataPersistanceManager dataPersistanceManagerScript;
-
     // Start is called before the first frame update
     void Start()
     {
-        obstacleSpawnerScript = GameObject.Find("ObstacleSpawner").GetComponent<ObstacleSpawner>();
-
-        dataPersistanceManagerScript = GameObject.Find("Data Persistance Manager").GetComponent<DataPersistanceManager>();
-        dataPersistanceManagerScript.roomChangement = true;
+        instance = GameObject.Find("ObstacleSpawner").GetComponent<ObstacleSpawner>();
     }
 
     // Update is called once per frame
@@ -71,18 +65,18 @@ public class MainManagerLVLrunningawayScene : MonoBehaviour
     public void Easy()
     {
         difficultyButtonWasClicled = true;
-        obstacleSpawnerScript.SetDifficulty(1f);
+        instance.SetDifficulty(1f);
     }
 
     public void Medium()
     {
         difficultyButtonWasClicled = true;
-        obstacleSpawnerScript.SetDifficulty(0.6f);
+        instance.SetDifficulty(0.6f);
     }
 
     public void Hard()
     {
         difficultyButtonWasClicled = true;
-        obstacleSpawnerScript.SetDifficulty(0.3f);
+        instance.SetDifficulty(0.3f);
     }
 }

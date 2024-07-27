@@ -18,7 +18,14 @@ public class RoomArrangement : MonoBehaviour
     {
         //Search for 
         dataPersistanceManagerScript = GameObject.Find("Data Persistance Manager").GetComponent<DataPersistanceManager>();
-        canChangeRoom = dataPersistanceManagerScript.roomChangement;
+        if (dataPersistanceManagerScript.roomChangementRunningAway)
+        {
+            roomState += 1;
+        }
+        if (dataPersistanceManagerScript.roomChangementDreamCatcher)
+        {
+            roomState += 1;
+        }
         ChangeRoomDecoration();
     }
 
@@ -38,6 +45,4 @@ public class RoomArrangement : MonoBehaviour
                 break;
         }
     }
-
-
 }
