@@ -4,9 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Interactions
+  - PauseBlur
+  - JumpPoint
+  - BotColliders
+  - TopColliders
   - Enemie
   - Powerup
   - Obstacle
+
   layers:
   - Default
   - TransparentFX
