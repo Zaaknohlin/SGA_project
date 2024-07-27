@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cab2dac33178bc24ba12164eedeca926
+guid: ddc7ce4ab1235fa4bbedc7426879c981
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Bubble_speech_1_0
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1427
+        width: 644
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4366eda064bb5e842b36e3e855f13b89
+      internalID: -612180611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubble_speech_1_1
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 1413
+        width: 644
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99be85d0f9473ef458bc2dae2d96439e
+      internalID: -1795117319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubble_speech_1_2
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 753
+        width: 644
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 449dc2b511bf4ce42ac460fa08bb9dfa
+      internalID: -935278041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bubble_speech_1_3
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 752
+        width: 644
+        height: 567
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c2d7f3699d4cdd46ab630220955fbe0
+      internalID: 1162057231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +203,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bubble_speech_1_0: -612180611
+      Bubble_speech_1_1: -1795117319
+      Bubble_speech_1_2: -935278041
+      Bubble_speech_1_3: 1162057231
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -9,13 +9,20 @@ public class RoomArrangement : MonoBehaviour
 {
     public bool canChangeRoom=false;
 
+    private SpriteRenderer _renderer;
+
     //////0-dirty / 1-medium / 2-clean
     private int roomState = 0;
 
     private DataPersistanceManager dataPersistanceManagerScript;
 
+    [SerializeField] private Sprite mediumSprite;
+
+    [SerializeField] private Sprite cleanSprite;
+
     private void Awake()
     {
+        _renderer = GetComponent<SpriteRenderer>();
         //Search for 
         dataPersistanceManagerScript = GameObject.Find("Data Persistance Manager").GetComponent<DataPersistanceManager>();
         if (dataPersistanceManagerScript.roomChangementRunningAway)
@@ -35,10 +42,12 @@ public class RoomArrangement : MonoBehaviour
         {
             case 0:
                 //Trigger changement
+                _renderer.sprite = mediumSprite;
                 roomState = 1;
                 break;
             case 1:
                 //Trigger changement
+                _renderer.sprite = cleanSprite;
                 roomState = 2;
                 break;
             default:

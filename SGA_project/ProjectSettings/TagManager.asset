@@ -12,7 +12,8 @@ TagManager:
   - Enemie
   - Powerup
   - Obstacle
-
+  - Bed
+  - MGTrigger
   layers:
   - Default
   - TransparentFX
@@ -49,7 +50,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Game
-    uniqueID: 723984527
     locked: 0

@@ -46,6 +46,7 @@ public class PointSystem : MonoBehaviour
         } else if (points > 9) { // win condition
             dataPersistanceManagerScript = GameObject.Find("Data Persistance Manager").GetComponent<DataPersistanceManager>();
             dataPersistanceManagerScript.roomChangementDreamCatcher = true;
+            Time.timeScale = 0f;
             mainManagerNightmarecatcherScript.Menu();
         }
         pointsText.text = "Score: " + points;
