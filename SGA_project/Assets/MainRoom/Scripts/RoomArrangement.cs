@@ -38,6 +38,7 @@ public class RoomArrangement : MonoBehaviour
 
     public void ChangeRoomDecoration() 
     {
+        /*
         switch (roomState)
         {
             case 0:
@@ -53,5 +54,6 @@ public class RoomArrangement : MonoBehaviour
             default:
                 break;
         }
+        */
     }
 }

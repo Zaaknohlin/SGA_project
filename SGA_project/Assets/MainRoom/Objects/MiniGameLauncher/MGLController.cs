@@ -26,12 +26,23 @@ public class MGLController : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        // Wait for interaction button
-        if (Input.GetKeyDown(KeyCode.E))
+        if (tag == "MGTrigger2")
         {
-            // Switch scene
-            SceneManager.LoadScene("LVLdreamCatcher");
-            // SceneManager.LoadScene("LVLrunningaway");
+            // Wait for interaction button
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                // Switch scene
+                SceneManager.LoadScene("LVLrunningaway");
+            }
+        } else if (tag == "MGTrigger")
+        {
+            // Wait for interaction button
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                // Switch scene
+                SceneManager.LoadScene("LVLdreamCatcher");
+                // SceneManager.LoadScene("LVLrunningaway");
+            }
         }
     }
 

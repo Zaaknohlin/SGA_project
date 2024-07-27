@@ -29,7 +29,7 @@ public class PointSystem : MonoBehaviour
         MainManagerNightmareCatcher = GameObject.Find("MainManager NightmareCatcher").GetComponent<MainManagerNightmareCatcher>();
 
         dataPersistanceManagerScript = GameObject.Find("Data Persistance Manager").GetComponent<DataPersistanceManager>();
-        GameObject.FindFirstObjectByType<DataPersistanceManager>();
+
     }
 
     // Update is called once per frame
@@ -46,7 +46,7 @@ public class PointSystem : MonoBehaviour
             Time.timeScale = 0f;
             MainManagerNightmareCatcher.Menu();
             return;
-        } else if (points == 2) { // win condition
+        } else if (points == 10) { // win condition
             dataPersistanceManagerScript.roomChangementDreamCatcher = true;
             Time.timeScale = 0f;
             MainManagerNightmareCatcher.Menu();

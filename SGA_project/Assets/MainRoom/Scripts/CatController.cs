@@ -140,7 +140,7 @@ public class CatController : MonoBehaviour
             _textBox_1.SetActive(true);
             
         }
-        if(collider.tag == "MGTrigger_2")
+        if(collider.tag == "MGTrigger2")
         {
             // trigger textbox
             _textBox_2.SetActive(true);
@@ -165,7 +165,7 @@ public class CatController : MonoBehaviour
             // trigger textbox out
             _textBox_1.SetActive(false);
         }
-        if(other.tag == "MGTrigger_2")
+        if(other.tag == "MGTrigger2")
         {
             // trigger textbox
             _textBox_2.SetActive(false);
